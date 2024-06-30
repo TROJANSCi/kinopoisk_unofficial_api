@@ -297,7 +297,7 @@ class KinopoiskAPIUnofficial:
         """
         url: str = f'{self.URL}/v1/staff?filmId={kip}'
         response = await self.request(url=url)
-        return Staff(**response) if response else None
+        return Staffs(**response) if response else None
 
     async def staff(self, person_id: int) -> Staffs | None:
         """
@@ -305,7 +305,7 @@ class KinopoiskAPIUnofficial:
         """
         url: str = f'{self.URL}/v1/staff/{person_id}'
         response = await self.request(url=url)
-        return Staffs(**response) if response else None
+        return Staff(**response) if response else None
 
     async def person(self, name: str, pg: int = 1) -> Person | None:
         """
