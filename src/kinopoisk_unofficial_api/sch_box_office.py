@@ -6,11 +6,11 @@ from pydantic import BaseModel, Field
 
 
 class Item(BaseModel):
-    type: str
+    type: Optional[str]
     amount: int
-    currency_code: str = Field(..., alias='currencyCode')
-    name: str
-    symbol: str
+    currency_code: Optional[str] = Field(..., alias='currencyCode')
+    name: Optional[str]
+    symbol: Optional[str]
 
 
 class BoxOffice(BaseModel):

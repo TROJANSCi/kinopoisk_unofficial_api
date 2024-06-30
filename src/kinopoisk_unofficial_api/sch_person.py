@@ -6,12 +6,12 @@ from pydantic import BaseModel, Field
 
 
 class Item(BaseModel):
-    kinopoisk_id: int = Field(..., alias='kinopoiskId')
-    web_url: str = Field(..., alias='webUrl')
-    name_ru: str = Field(..., alias='nameRu')
-    name_en: str = Field(..., alias='nameEn')
-    sex: str
-    poster_url: str = Field(..., alias='posterUrl')
+    kinopoisk_id: Optional[int] = Field(..., alias='kinopoiskId')
+    web_url: Optional[str] = Field(..., alias='webUrl')
+    name_ru: Optional[str] = Field(..., alias='nameRu')
+    name_en: Optional[str] = Field(..., alias='nameEn')
+    sex: Optional[str]
+    poster_url: Optional[str] = Field(..., alias='posterUrl')
 
 
 class Person(BaseModel):

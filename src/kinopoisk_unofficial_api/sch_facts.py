@@ -6,9 +6,9 @@ from pydantic import BaseModel
 
 
 class Item(BaseModel):
-    text: str
-    type: str
-    spoiler: bool
+    text: Optional[str] = None
+    type: Optional[str] = None
+    spoiler: Optional[bool]
 
 
 class Facts(BaseModel):

@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field
 
 
 class Item(BaseModel):
-    image_url: str = Field(..., alias='imageUrl')
-    preview_url: str = Field(..., alias='previewUrl')
+    image_url: Optional[str] = Field(..., alias='imageUrl')
+    preview_url: Optional[str] = Field(..., alias='previewUrl')
 
 
 class Images(BaseModel):

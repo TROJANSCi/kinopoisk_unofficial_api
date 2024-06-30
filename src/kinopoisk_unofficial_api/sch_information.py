@@ -18,7 +18,7 @@ class Information(BaseModel):
     kinopoisk_hd_id: Optional[str] = Field(None, alias='kinopoiskHDId')
     imdb_id: Optional[str] = Field(None, alias='imdbId')
     name_ru: Optional[str] = Field(None, alias='nameRu')
-    name_en: Optional[Any] = Field(None, alias='nameEn')
+    name_en: Optional[str] = Field(None, alias='nameEn')
     name_original: Optional[str] = Field(None, alias='nameOriginal')
     poster_url: Optional[str] = Field(None, alias='posterUrl')
     poster_url_preview: Optional[str] = Field(None, alias='posterUrlPreview')

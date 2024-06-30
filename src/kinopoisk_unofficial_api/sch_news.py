@@ -6,12 +6,12 @@ from pydantic import BaseModel, Field
 
 
 class Item(BaseModel):
-    kinopoisk_id: int = Field(..., alias='kinopoiskId')
-    image_url: str = Field(..., alias='imageUrl')
-    title: str
-    description: str
-    url: str
-    published_at: str = Field(..., alias='publishedAt')
+    kinopoisk_id: Optional[int] = Field(..., alias='kinopoiskId')
+    image_url: Optional[str] = Field(..., alias='imageUrl')
+    title: Optional[str] = None
+    description: Optional[str] = None
+    url: Optional[str] = None
+    published_at: Optional[str] = Field(..., alias='publishedAt')
 
 
 class News(BaseModel):

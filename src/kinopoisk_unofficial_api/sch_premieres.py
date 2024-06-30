@@ -14,16 +14,16 @@ class Genre(BaseModel):
 
 
 class Item(BaseModel):
-    kinopoisk_id: int = Field(..., alias='kinopoiskId')
-    name_ru: str = Field(..., alias='nameRu')
-    name_en: str = Field(..., alias='nameEn')
-    year: int
-    poster_url: str = Field(..., alias='posterUrl')
-    poster_url_preview: str = Field(..., alias='posterUrlPreview')
-    countries: List[Country]
-    genres: List[Genre]
-    duration: int
-    premiere_ru: str = Field(..., alias='premiereRu')
+    kinopoisk_id: Optional[int] = Field(..., alias='kinopoiskId')
+    name_ru: Optional[str] = Field(..., alias='nameRu')
+    name_en: Optional[str] = Field(..., alias='nameEn')
+    year: Optional[int] = None
+    poster_url: Optional[str] = Field(..., alias='posterUrl')
+    poster_url_preview: Optional[str] = Field(..., alias='posterUrlPreview')
+    countries: Optional[List[Country]] = None
+    genres: Optional[List[Genre]] = None
+    duration: Optional[int] = None
+    premiere_ru: Optional[str] = Field(..., alias='premiereRu')
 
 
 class Premieres(BaseModel):

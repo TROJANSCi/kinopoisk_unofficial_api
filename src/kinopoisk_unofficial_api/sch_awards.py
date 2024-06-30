@@ -6,28 +6,28 @@ from pydantic import BaseModel, Field
 
 
 class Person(BaseModel):
-    kinopoisk_id: int = Field(..., alias='kinopoiskId')
-    web_url: str = Field(..., alias='webUrl')
-    name_ru: str = Field(..., alias='nameRu')
-    name_en: str = Field(..., alias='nameEn')
-    sex: str
-    poster_url: str = Field(..., alias='posterUrl')
+    kinopoisk_id: Optional[int] = Field(..., alias='kinopoiskId')
+    web_url: Optional[str] = Field(..., alias='webUrl')
+    name_ru: Optional[str] = Field(..., alias='nameRu')
+    name_en: Optional[str] = Field(..., alias='nameEn')
+    sex: Optional[str]
+    poster_url: Optional[str] = Field(..., alias='posterUrl')
     growth: Optional[int]
     birthday: Optional[str]
-    death: Any
+    death: Optional[Any]
     age: Optional[int]
     birthplace: Optional[str]
-    deathplace: Any
+    deathplace: Optional[Any]
     profession: Optional[str]
 
 
 class Item(BaseModel):
-    name: str
-    win: bool
+    name: Optional[str]
+    win: Optional[bool]
     image_url: Optional[str] = Field(..., alias='imageUrl')
-    nomination_name: str = Field(..., alias='nominationName')
-    year: int
-    persons: List[Person]
+    nomination_name: Optional[str] = Field(..., alias='nominationName')
+    year: Optional[int]
+    persons: Optional[List[Person]]
 
 
 class Awards(BaseModel):

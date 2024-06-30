@@ -6,14 +6,14 @@ from pydantic import BaseModel, Field
 
 
 class Item(BaseModel):
-    kinopoisk_id: int = Field(..., alias='kinopoiskId')
-    type: str
-    date: str
-    positive_rating: int = Field(..., alias='positiveRating')
-    negative_rating: int = Field(..., alias='negativeRating')
-    author: str
+    kinopoisk_id: Optional[int] = Field(..., alias='kinopoiskId')
+    type: Optional[str]
+    date: Optional[str]
+    positive_rating: Optional[int] = Field(..., alias='positiveRating')
+    negative_rating: Optional[int] = Field(..., alias='negativeRating')
+    author: Optional[str]
     title: Optional[str]
-    description: str
+    description: Optional[str]
 
 
 class Reviews(BaseModel):

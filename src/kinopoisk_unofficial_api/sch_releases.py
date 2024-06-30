@@ -14,22 +14,22 @@ class Genre(BaseModel):
 
 
 class Release(BaseModel):
-    film_id: int = Field(..., alias='filmId')
-    name_ru: str = Field(..., alias='nameRu')
+    film_id: Optional[int] = Field(..., alias='filmId')
+    name_ru: Optional[str] = Field(..., alias='nameRu')
     name_en: Optional[str] = Field(..., alias='nameEn')
-    year: int
-    poster_url: str = Field(..., alias='posterUrl')
-    poster_url_preview: str = Field(..., alias='posterUrlPreview')
-    countries: List[Country]
-    genres: List[Genre]
-    rating: float
-    rating_vote_count: int = Field(..., alias='ratingVoteCount')
+    year: Optional[int]
+    poster_url: Optional[str] = Field(..., alias='posterUrl')
+    poster_url_preview: Optional[str] = Field(..., alias='posterUrlPreview')
+    countries: Optional[List[Country]]
+    genres: Optional[List[Genre]]
+    rating: Optional[float]
+    rating_vote_count: Optional[int] = Field(..., alias='ratingVoteCount')
     expectations_rating: Optional[float] = Field(..., alias='expectationsRating')
-    expectations_rating_vote_count: int = Field(
+    expectations_rating_vote_count: Optional[int] = Field(
         ..., alias='expectationsRatingVoteCount'
     )
-    duration: int
-    release_date: str = Field(..., alias='releaseDate')
+    duration: Optional[int]
+    release_date: Optional[str] = Field(..., alias='releaseDate')
 
 
 class Releases(BaseModel):

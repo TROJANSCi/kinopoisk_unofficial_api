@@ -6,9 +6,9 @@ from pydantic import BaseModel
 
 
 class Item(BaseModel):
-    url: str
-    name: str
-    site: str
+    url: Optional[str] = None
+    name: Optional[str] = None
+    site: Optional[str] = None
 
 
 class Videos(BaseModel):

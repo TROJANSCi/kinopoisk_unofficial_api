@@ -14,19 +14,19 @@ class Genre(BaseModel):
 
 
 class Item(BaseModel):
-    kinopoisk_id: int = Field(..., alias='kinopoiskId')
+    kinopoisk_id: Optional[int] = Field(..., alias='kinopoiskId')
     imdb_id: Optional[str] = Field(..., alias='imdbId')
-    name_ru: str = Field(..., alias='nameRu')
-    name_en: Any = Field(..., alias='nameEn')
-    name_original: str = Field(..., alias='nameOriginal')
-    countries: List[Country]
-    genres: List[Genre]
-    rating_kinopoisk: float = Field(..., alias='ratingKinopoisk')
-    rating_imdb: float = Field(..., alias='ratingImdb')
-    year: int
-    type: str
-    poster_url: str = Field(..., alias='posterUrl')
-    poster_url_preview: str = Field(..., alias='posterUrlPreview')
+    name_ru: Optional[str] = Field(..., alias='nameRu')
+    name_en: Optional[str] = Field(..., alias='nameEn')
+    name_original: Optional[str] = Field(..., alias='nameOriginal')
+    countries: Optional[List[Country]]
+    genres: Optional[List[Genre]]
+    rating_kinopoisk: Optional[float] = Field(..., alias='ratingKinopoisk')
+    rating_imdb: Optional[float] = Field(..., alias='ratingImdb')
+    year: Optional[int]
+    type: Optional[str]
+    poster_url: Optional[str] = Field(..., alias='posterUrl')
+    poster_url_preview: Optional[str] = Field(..., alias='posterUrlPreview')
 
 
 class Films(BaseModel):

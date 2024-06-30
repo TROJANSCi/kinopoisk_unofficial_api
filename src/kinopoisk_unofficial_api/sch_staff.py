@@ -6,13 +6,13 @@ from pydantic import BaseModel, Field
 
 
 class Film(BaseModel):
-    film_id: int = Field(..., alias='filmId')
-    name_ru: str = Field(..., alias='nameRu')
-    name_en: Any = Field(..., alias='nameEn')
-    rating: Optional[str]
-    general: bool
-    description: str
-    profession_key: str = Field(..., alias='professionKey')
+    film_id: Optional[int] = Field(..., alias='filmId')
+    name_ru: Optional[str] = Field(None, alias='nameRu')
+    name_en: Optional[str] = Field(None, alias='nameEn')
+    rating: Optional[str] = None
+    general: Optional[bool] = None
+    description: Optional[str] = None
+    profession_key: Optional[str] = Field(None, alias='professionKey')
 
 
 class Staff(BaseModel):

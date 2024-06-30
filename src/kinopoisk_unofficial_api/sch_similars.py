@@ -6,13 +6,13 @@ from pydantic import BaseModel, Field
 
 
 class Item(BaseModel):
-    film_id: int = Field(..., alias='filmId')
-    name_ru: str = Field(..., alias='nameRu')
-    name_en: str = Field(..., alias='nameEn')
-    name_original: str = Field(..., alias='nameOriginal')
-    poster_url: str = Field(..., alias='posterUrl')
-    poster_url_preview: str = Field(..., alias='posterUrlPreview')
-    relation_type: str = Field(..., alias='relationType')
+    film_id: Optional[int] = Field(..., alias='filmId')
+    name_ru: Optional[str] = Field(..., alias='nameRu')
+    name_en: Optional[str] = Field(..., alias='nameEn')
+    name_original: Optional[str] = Field(..., alias='nameOriginal')
+    poster_url: Optional[str] = Field(..., alias='posterUrl')
+    poster_url_preview: Optional[str] = Field(..., alias='posterUrlPreview')
+    relation_type: Optional[str] = Field(..., alias='relationType')
 
 
 class Similars(BaseModel):

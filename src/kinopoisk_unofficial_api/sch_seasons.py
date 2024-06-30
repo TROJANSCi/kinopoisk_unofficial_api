@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field
 
 
 class Episode(BaseModel):
-    season_number: int = Field(..., alias='seasonNumber')
-    episode_number: int = Field(..., alias='episodeNumber')
+    season_number: Optional[int] = Field(..., alias='seasonNumber')
+    episode_number: Optional[int] = Field(..., alias='episodeNumber')
     name_ru: Optional[str] = Field(..., alias='nameRu')
     name_en: Optional[str] = Field(..., alias='nameEn')
     synopsis: Optional[str]
@@ -15,7 +15,7 @@ class Episode(BaseModel):
 
 
 class Item(BaseModel):
-    number: int
+    number: Optional[int] = None
     episodes: List[Episode]
 
 

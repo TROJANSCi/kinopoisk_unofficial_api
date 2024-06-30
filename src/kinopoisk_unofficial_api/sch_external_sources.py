@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field
 
 
 class Item(BaseModel):
-    url: str
-    platform: str
-    logo_url: str = Field(..., alias='logoUrl')
+    url: Optional[str] = None
+    platform: Optional[str] = None
+    logo_url: Optional[str] = Field(..., alias='logoUrl')
 
 
 class ExternalSources(BaseModel):

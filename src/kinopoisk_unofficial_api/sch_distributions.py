@@ -14,12 +14,12 @@ class Company(BaseModel):
 
 
 class Item(BaseModel):
-    type: str
+    type: Optional[str] = None
     sub_type: Optional[str] = Field(..., alias='subType')
-    date: str
-    re_release: bool = Field(..., alias='reRelease')
-    country: Optional[CountryItem]
-    companies: List[Company]
+    date: Optional[str] = None
+    re_release: Optional[bool] = Field(..., alias='reRelease')
+    country: Optional[CountryItem] = None
+    companies: Optional[List[Company]] = None
 
 
 class Distributions(BaseModel):
