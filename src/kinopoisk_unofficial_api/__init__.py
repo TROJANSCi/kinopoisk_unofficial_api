@@ -166,7 +166,7 @@ class KinopoiskAPIUnofficial:
                                 'TOP_250_TV_SHOWS', 'TOP_250_MOVIES', 'VAMPIRE_THEME',
                                 'COMICS_THEME', 'CLOSES_RELEASES', 'FAMILY', 'OSKAR_WINNERS_2021',
                                 'LOVE_THEME', 'ZOMBIE_THEME', 'CATASTROPHE_THEME', 'KIDS_ANIMATION_THEME',
-                                'POPULAR_SERIES',] = 'TOP_POPULAR_ALL') -> Collections | None:
+                                'POPULAR_SERIES'] = 'TOP_POPULAR_ALL') -> Collections | None:
         """
         Возвращает список фильмов с пагинацией. Каждая страница содержит не более чем 20 фильмов.
         Тип топа или коллекции
@@ -266,7 +266,7 @@ class KinopoiskAPIUnofficial:
 
         if keyword:
             url += f'&keyword={keyword}'
-
+        print('!!!!', url)
         response = await self.request(url=url)
         return Films(**response) if response else None
 
@@ -291,15 +291,16 @@ class KinopoiskAPIUnofficial:
         response = await self.request(url=url)
         return Release(**response) if response else None
 
-    async def staffs(self, kip: int) -> Staff | None:
+    async def staffs(self, kip: int) -> Staffs | None:
         """
         Набор методов для работы с данными об актерах, режиссерах и т.д.
         """
         url: str = f'{self.URL}/v1/staff?filmId={kip}'
         response = await self.request(url=url)
-        return Staffs(**response) if response else None
 
-    async def staff(self, person_id: int) -> Staffs | None:
+        return Staffs(items=response) if response else None
+
+    async def staff(self, person_id: int) -> Staff | None:
         """
         Данные об актере, режиссере и т.д.
         """
